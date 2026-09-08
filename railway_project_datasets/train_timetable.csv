@@ -1,0 +1,17 @@
+service_date,train_number,train_name,origin,destination,train_type,origin_code,destination_code,departure_time,arrival_time,scheduled_frequency
+2026-09-05,12675,Chennai Central,MAS,Coimbatore Intercity,Express,MAS,CBE,06:15,14:00,Daily
+2026-09-05,12676,Coimbatore Intercity,CBE,MAS,Express,CBE,MAS,06:30,14:20,Daily
+2026-09-05,12633,Kanyakumari Express,MAS,NCJ,Express,MAS,NCJ,20:00,07:10,Daily
+2026-09-05,12634,Kanyakumari Express,NCJ,MAS,Express,NCJ,MAS,18:00,05:30,Daily
+2026-09-05,12661,Pothigai Express,MS,TEN,Express,MS,TEN,20:40,07:15,Daily
+2026-09-05,12662,Pothigai Express,TEN,MS,Express,TEN,MS,20:15,07:00,Daily
+2026-09-05,12635,Vaigai Superfast,MS,MDU,Superfast,MS,MDU,13:50,21:30,Daily
+2026-09-05,12636,Vaigai Superfast,MDU,MS,Superfast,MDU,MS,06:45,14:20,Daily
+2026-09-05,12671,Nilagiri Express,MAS,CBE,Express,MAS,CBE,21:15,06:15,Daily
+2026-09-05,12672,Nilagiri Express,CBE,MAS,Express,CBE,MAS,20:15,05:30,Daily
+2026-09-05,12607,Lalbagh Express,MAS,SBC,Express,MAS,SBC,15:30,22:15,Daily
+2026-09-05,12608,Lalbagh Express,SBC,MAS,Express,SBC,MAS,06:20,13:00,Daily
+2026-09-05,16824,Ananthapuri Express,NCJ,MS,Express,NCJ,MS,15:00,06:20,Daily
+2026-09-05,16823,Ananthapuri Express,MS,NCJ,Express,MS,NCJ,19:50,09:15,Daily
+2026-09-05,22671,Tejas Express,MS,MDU,Superfast,MS,MDU,06:00,12:30,Daily
+2026-09-05,22672,Tejas Express,MDU,MS,Superfast,MDU,MS,15:00,21:30,Daily

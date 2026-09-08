@@ -1,0 +1,17 @@
+station_code,station_name,city,state,latitude,longitude,station_type
+MAS,Chennai Central,Chennai,Tamil Nadu,13.0827,80.2707,Major Junction
+MS,Chennai Egmore,Chennai,Tamil Nadu,13.0732,80.2609,Terminal
+AJJ,Arakkonam,Arakkonam,Tamil Nadu,13.0844,79.67,Junction
+KPD,Katpadi,Vellore,Tamil Nadu,12.9692,79.137,Junction
+SA,Salem Junction,Salem,Tamil Nadu,11.6643,78.146,Junction
+ED,Erode Junction,Erode,Tamil Nadu,11.341,77.7172,Junction
+CBE,Coimbatore Junction,Coimbatore,Tamil Nadu,10.999,76.966,Junction
+MDU,Madurai Junction,Madurai,Tamil Nadu,9.9173,78.1198,Junction
+TEN,Tirunelveli,Tirunelveli,Tamil Nadu,8.7333,77.7167,Junction
+NCJ,Nagercoil Junction,Nagercoil,Tamil Nadu,8.1854,77.4119,Junction
+TPJ,Tiruchchirappalli Junction,Tiruchirappalli,Tamil Nadu,10.8155,78.6871,Junction
+VRI,Vriddhachalam Junction,Vriddhachalam,Tamil Nadu,11.5215,79.324,Junction
+VM,Villupuram Junction,Villupuram,Tamil Nadu,11.9401,79.4861,Junction
+TPTY,Tirupati,Tirupati,Andhra Pradesh,13.6288,79.4192,Terminal
+BNC,Bengaluru Cantt,Bengaluru,Karnataka,12.993,77.598,Junction
+SBC,KSR Bengaluru City,Bengaluru,Karnataka,12.9774,77.5719,Terminal

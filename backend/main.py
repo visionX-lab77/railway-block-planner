@@ -5,8 +5,10 @@ import sys
 import psycopg2
 import pandas as pd
 import io
+import os
+from dotenv import load_dotenv
 
-
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 # =========================================================
 # FASTAPI APP
 # =========================================================
@@ -40,13 +42,9 @@ app.add_middleware(
 
 def get_connection():
     return psycopg2.connect(
-        host="localhost",
-        port="5408",
-        database="railway_block_planner",
-        user="postgres",
-        password="hackthon"
+        os.getenv("postgresql://neondb_owner:npg_MGT9JxedhPn5@ep-small-forest-b3r8zw6y-pooler.c-4.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require")
     )
-
+print("DATABASE_URL loaded:", bool(os.getenv("DATABASE_URL")))
 
 # =========================================================
 # HOME

@@ -42,7 +42,7 @@ app.add_middleware(
 
 def get_connection():
     return psycopg2.connect(
-        os.getenv("postgresql://neondb_owner:npg_MGT9JxedhPn5@ep-small-forest-b3r8zw6y-pooler.c-4.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require")
+        os.getenv("DATABASE_URL")
     )
 print("DATABASE_URL loaded:", bool(os.getenv("DATABASE_URL")))
 

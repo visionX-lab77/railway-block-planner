@@ -12,14 +12,15 @@ import {
 
 import "./App.css";
 
-const API = "http://127.0.0.1:8000";
+const API = "https://railway-block-planner-v68c.onrender.com";
 
 function App() {
+  const [role, setRole] = useState(null);
+  const [adminPassword, setAdminPassword] = useState("");
   const [maintenance, setMaintenance] = useState([]);
   const [blocks, setBlocks] = useState([]);
   const [weeklyPlan, setWeeklyPlan] = useState([]);
   const [monthlyPlan, setMonthlyPlan] = useState([]);
-
   const [generating, setGenerating] = useState(false);
   const [generatingMonthly, setGeneratingMonthly] = useState(false);
 
@@ -28,6 +29,8 @@ function App() {
   const [uploading, setUploading] = useState(false);
   const [uploadMessage, setUploadMessage] = useState("");
   const [uploadError, setUploadError] = useState("");
+
+ 
 
   const loadDashboardData = async () => {
   try {
@@ -265,13 +268,109 @@ function App() {
     boxShadow: "0 8px 24px rgba(16, 24, 40, 0.08)"
   };
 
+if (role === null) {
   return (
+    <div className="role-login">
+      <div className="role-card">
+
+        
+
+        <h1>Railway AI Block Planner</h1>
+
+        <p>Select your role to continue</p>
+
+        <div className="role-buttons">
+
+          <button
+            className="role-btn"
+            onClick={() => setRole("admin-login")}
+          >
+            👨‍💼 Admin
+          </button>
+
+          <button
+            className="role-btn"
+            onClick={() => setRole("staff")}
+          >
+            👷 Staff
+          </button>
+
+        </div>
+
+        <div className="role-footer">
+          AI-Powered Automatic Block Planning System
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
+if (role === "admin-login") {
+  return (
+    <div className="admin-login">
+      <div className="admin-login-card">
+
+        <div className="admin-icon">🔐</div>
+
+        <h1>Admin Login</h1>
+
+        <p>Enter your password to access the Admin Dashboard</p>
+
+        <input
+          className="admin-password-input"
+          type="password"
+          placeholder="Enter password"
+          value={adminPassword}
+          onChange={(e) => setAdminPassword(e.target.value)}
+        />
+
+        <button
+          className="admin-login-btn"
+          onClick={() => {
+            if (adminPassword === "1234") {
+              setRole("admin");
+              setAdminPassword("");
+            } else {
+              alert("❌ Incorrect Password");
+            }
+          }}
+        >
+          🔓 Login to Dashboard
+        </button>
+
+        <button
+          className="admin-back-btn"
+          onClick={() => setRole(null)}
+        >
+          ← Back to Role Selection
+        </button>
+
+      </div>
+    </div>
+  );
+}
+
+  return (
+    
     <div className="app">
       <header className="topbar">
         <div>
           <h1>🚆 Railway AI Block Planner</h1>
           <p>AI-Powered Automatic Block Planning System</p>
         </div>
+
+          <button
+      onClick={() => setRole(null)}
+      style={{
+        padding: "10px 16px",
+        border: "none",
+        borderRadius: "8px",
+        cursor: "pointer"
+      }}
+    >
+      🚪 Logout
+    </button>
 
         <div className="status">
           <span></span>
@@ -329,7 +428,7 @@ function App() {
             </div>
           </div>
         </section>
-
+      {role === "admin" && (
         <section className="card upload-card">
           <div className="card-header">
             <div>
@@ -392,6 +491,7 @@ function App() {
             </span>
           </div>
         </section>
+        )}
 
         <section className="card chart-card">
           <div className="card-header">
@@ -491,7 +591,8 @@ function App() {
               <div className="plan-count">
                 {weeklyPlan.length} Tasks Planned
               </div>
-
+            
+            {role === "admin" && (
               <button
                 className="generate-btn"
                 onClick={generatePlan}
@@ -501,6 +602,7 @@ function App() {
                   ? "⏳ Generating..."
                   : "⚡ Generate Optimized Plan"}
               </button>
+              )}
             </div>
           </div>
 
@@ -570,7 +672,7 @@ function App() {
               <div className="plan-count">
                 {monthlyPlan.length} Tasks Planned
               </div>
-
+            {role === "admin" && (
               <button
                 className="generate-btn"
                 onClick={generateMonthlyPlan}
@@ -580,6 +682,7 @@ function App() {
                   ? "⏳ Generating..."
                   : "📆 Generate Monthly Plan"}
               </button>
+              )}
             </div>
           </div>
 

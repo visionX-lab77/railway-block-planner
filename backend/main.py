@@ -695,6 +695,8 @@ async def upload_maintenance_data(
 
 
         if ai_result.returncode != 0:
+            print("AI PRIORITY ENGINE ERROR:")
+            print(ai_result.stderr)
 
             return {
                 "success": False,

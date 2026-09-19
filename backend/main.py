@@ -7,6 +7,7 @@ import pandas as pd
 import io
 import os
 from dotenv import load_dotenv
+from pathlib import Path
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 # =========================================================
@@ -680,10 +681,13 @@ async def upload_maintenance_data(
         # RUN AI PRIORITY ENGINE
         # -------------------------------------------------
 
+        BASE_DIR = Path(__file__).resolve().parent
+        PRIORITY_ENGINE = BASE_DIR / "ai" / "priority_engine.py"
+
         ai_result = subprocess.run(
             [
                 sys.executable,
-                r"C:\Users\vigne\Desktop\hackthon\backend\ai\priority_engine.py"
+                str(PRIORITY_ENGINE)
             ],
             capture_output=True,
             text=True

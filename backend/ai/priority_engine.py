@@ -6,14 +6,15 @@ import psycopg2
 # DATABASE CONNECTION
 # =========================================================
 
-conn = psycopg2.connect(
-    host="localhost",
-    port="5408",
-    database="railway_block_planner",
-    user="postgres",
-    password="hackthon"
-)
+import os
+from dotenv import load_dotenv
+import psycopg2
 
+load_dotenv()
+
+conn = psycopg2.connect(
+    os.getenv("DATABASE_URL")
+)
 
 # =========================================================
 # READ MAINTENANCE DATA
